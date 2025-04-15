@@ -11,7 +11,7 @@ export async function fetchGetPagedGoods({
   sortBy,
 }) {
   // 기본 URL
-  let url = `http://localhost:8090/app/shop/getGoods?page=${page}&size=${size}`;
+  let url = `http://10.10.10.192:8090/app/shop/getGoods?page=${page}&size=${size}`;
 
   // category와 search 값이 있을 경우, URL에 쿼리 파라미터로 추가
   if (category) {
@@ -47,7 +47,7 @@ export async function fetchGetPagedGoods({
 // 재고가 있는 상품 목록
 export async function fetchGetAllInStockGoods() {
   const response = await axios.get(
-    `http://localhost:8090/app/shop/findAllInStockGoods`
+    `http://10.10.10.192:8090/app/shop/findAllInStockGoods`
   );
 
   if (response.status !== 200) {
@@ -61,7 +61,7 @@ export async function fetchGetAllInStockGoods() {
 // 재고가 있으면서 할인 중인 상품 목록
 export async function fetchGetDiscountedGoods() {
   const response = await axios.get(
-    `http://localhost:8090/app/shop/isDiscountedList`
+    `http://10.10.10.192:8090/app/shop/isDiscountedList`
   );
 
   if (response.status !== 200) {
@@ -74,7 +74,7 @@ export async function fetchGetDiscountedGoods() {
 
 // 인기 상품 목록
 export async function fetchGetTop10Items() {
-  const response = await axios.get(`http://localhost:8090/app/shop/top10`);
+  const response = await axios.get(`http://10.10.10.192:8090/app/shop/top10`);
 
   if (response.status !== 200) {
     console.log("예외발생");
@@ -87,7 +87,7 @@ export async function fetchGetTop10Items() {
 // goods_id로 sub_name 가져오기
 export async function fetchSubName(goodsId) {
   const response = await axios.get(
-    `http://localhost:8090/app/goods/subName?goodsId=${goodsId}`
+    `http://10.10.10.192:8090/app/goods/subName?goodsId=${goodsId}`
   );
 
   if (response.status !== 200) {
@@ -101,7 +101,7 @@ export async function fetchSubName(goodsId) {
 // 연관상품 가져오기
 export async function fetchRecommendations(subName) {
   const response = await axios.get(
-    `http://localhost:8090/app/goods/recommendations?subName=${subName}`
+    `http://10.10.10.192:8090/app/goods/recommendations?subName=${subName}`
   );
 
   if (response.status !== 200) {
@@ -117,7 +117,7 @@ export async function fetchPostOrder(order) {
   try {
     // 주문 정보 저장
     const response = await axios.post(
-      `http://localhost:8090/app/payment/order`,
+      `http://10.10.10.192:8090/app/payment/order`,
       order
     );
 

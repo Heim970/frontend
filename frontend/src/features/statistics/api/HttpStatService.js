@@ -3,7 +3,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "http://localhost:8090/app/statistics",
+  baseURL: "http://10.10.10.192:8090/app/statistics",
   timeout: 1000,
   headers: {
     "Content-Type": "application/json",
@@ -87,7 +87,7 @@ export async function fetchGetSalesHistory(
   paymentStatus = 1
 ) {
   const response = await axios.get(
-    `http://localhost:8090/app/salesHistory/findByDate`,
+    `http://10.10.10.192:8090/app/salesHistory/findByDate`,
     {
       params: {
         date,
@@ -102,7 +102,7 @@ export async function fetchGetSalesHistory(
 
 export async function fetchGetDetailHistroy(orderId) {
   const response = await axios.get(
-    `http://localhost:8090/app/salesHistory/receipt/${orderId}`
+    `http://10.10.10.192:8090/app/salesHistory/receipt/${orderId}`
   );
   return response.data;
 }

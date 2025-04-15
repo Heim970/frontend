@@ -16,7 +16,7 @@ export function SuccessPage() {
 
     async function confirm() {
       const response = await fetch(
-        "http://localhost:8090/app/payment/confirm",
+        "http://10.10.10.192:8090/app/payment/confirm",
         {
           method: "POST",
           headers: {

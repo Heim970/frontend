@@ -3,7 +3,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "http://localhost:8090/app/salesAlert",
+  baseURL: "http://10.10.10.192:8090/app/salesAlert",
   timeout: 1000,
   headers: {
     "Content-Type": "application/json",
@@ -34,7 +34,7 @@ export async function fetchGetAlertListByTrend(date, trendBasis) {
 // 유저가 작성한 코멘트를 수정/등록
 export async function fetchUpdateComment(alertId, userComment) {
   const response = await fetch(
-    "http://localhost:8090/app/salesAlert/updateComment",
+    "http://10.10.10.192:8090/app/salesAlert/updateComment",
     {
       method: "PUT",
       headers: {

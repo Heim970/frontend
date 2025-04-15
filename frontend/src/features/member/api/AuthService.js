@@ -1,5 +1,5 @@
 // API 요청파일
-const API_BASE_URL = "http://localhost:8090/app/member";
+const API_BASE_URL = "http://10.10.10.192:8090/app/member";
 
 export const signup = async (memberId, memberPasswd) => {
   const response = await fetch(`${API_BASE_URL}/signup`, {

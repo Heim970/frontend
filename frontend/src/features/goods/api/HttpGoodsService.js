@@ -5,7 +5,7 @@ export const saveGoods = async (formData) => {
   console.log("formData1:", formData);
   try {
     const response = await axios.post(
-      "http://localhost:8090/app/goods/save",
+      "http://10.10.10.192:8090/app/goods/save",
       formData,
       {
         headers: {
@@ -22,7 +22,7 @@ export const saveGoods = async (formData) => {
 
 export async function fetchFileUpload(formData) {
   const response = await axios.post(
-    "http://localhost:8090/app/goods/save",
+    "http://10.10.10.192:8090/app/goods/save",
     formData,
     {
       headers: {
@@ -44,7 +44,7 @@ export async function fetchFileUpload(formData) {
 // 1. 전체 상품 목록 가져오기
 export async function fetchGoodsList() {
   const response = await axios.get(
-    `http://localhost:8090/app/categories/findAll`
+    `http://10.10.10.192:8090/app/categories/findAll`
   );
 
   if (response.status !== 200) {
@@ -58,7 +58,7 @@ export async function fetchGoodsList() {
 // 2. 선택한 상품 정보 가져오기
 export async function fetchGoodsDetail(id) {
   const response = await axios.get(
-    `http://localhost:8090/app/goods/findById/${id}`
+    `http://10.10.10.192:8090/app/goods/findById/${id}`
   );
 
   if (response.status !== 200) {
@@ -72,7 +72,7 @@ export async function fetchGoodsDetail(id) {
 // 3. 카테고리별 정렬 (대분류)
 export async function fetchGoodsByCategory(firstname) {
   const response = await axios.get(
-    `http://localhost:8090/app/categories/${firstname}`
+    `http://10.10.10.192:8090/app/categories/${firstname}`
   );
 
   console.log(response);
@@ -87,7 +87,7 @@ export async function fetchGoodsByCategory(firstname) {
 // 4. 카테고리별 정렬 (소분류)
 export async function fetchGoodsBySubCategory(firstname, secondName) {
   const response = await axios.get(
-    `http://localhost:8090/app/categories/${firstname}/${secondName}`
+    `http://10.10.10.192:8090/app/categories/${firstname}/${secondName}`
   );
 
   if (response.status !== 200) {
@@ -102,7 +102,7 @@ export async function fetchGoodsBySubCategory(firstname, secondName) {
 // 상품 가격 수정
 export async function updateGoods(id, newPrice) {
   const response = await axios.put(
-    `http://localhost:8090/app/goods/update/${id}`,
+    `http://10.10.10.192:8090/app/goods/update/${id}`,
     { goods_price: newPrice }
   );
 
@@ -118,7 +118,7 @@ export async function updateGoods(id, newPrice) {
 // 상품 할인
 export async function discountGoods(id, discountRate, discountPeriod) {
   const response = await axios.put(
-    `http://localhost:8090/app/goods/update/discount`,
+    `http://10.10.10.192:8090/app/goods/update/discount`,
     null,
     {
       params: {
@@ -141,7 +141,7 @@ export async function discountGoods(id, discountRate, discountPeriod) {
 // 할인 취소
 export async function cancelDiscount(id) {
   const response = await axios.put(
-    `http://localhost:8090/app/goods/update/cancel-discount?id=${id}`
+    `http://10.10.10.192:8090/app/goods/update/cancel-discount?id=${id}`
   );
 
   if (response.status !== 200) {
@@ -149,6 +149,6 @@ export async function cancelDiscount(id) {
     throw new Error("updateGoods 예외발생");
   }
 
-  console.log("할인 취소",response.data);
+  console.log("할인 취소", response.data);
   return response.data;
 }
