@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || "http://localhost:8090/app",
-  timeout: 1000,
+  baseURL: "http://api.daily24.click/app" || "http://localhost:8090/app",
+  timeout: 10000,
   headers: {
     "Content-Type": "application/json",
   },

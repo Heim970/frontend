@@ -50,7 +50,7 @@ export default function GlobalNotification() {
     const connectSSE = () => {
       console.log("📡 SSE 연결 시도중...");
       eventSource = new EventSource(
-        "http://localhost:8090/app/sse/connect?clientId=admin"
+        "http://api.daily24.click/app/sse/connect?clientId=admin"
       );
 
       eventSource.onopen = () => {
