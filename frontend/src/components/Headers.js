@@ -20,9 +20,9 @@ export default function Headers() {
           {/* Centered logo */}
           <a href="/" className="flex items-center justify-center">
             <img
-              src="https://flowbite.com/docs/images/logo.svg"
+              src="logo.svg"
               className="mr-3 h-6 sm:h-9"
-              alt="Flowbite Logo"
+              alt="Daily24 Logo"
             />
             <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
               Daily24
@@ -40,9 +40,9 @@ export default function Headers() {
         <div className="hidden md:flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
           <a href="/" className="flex items-center ml-12 lg:ml-0">
             <img
-              src="https://flowbite.com/docs/images/logo.svg"
+              src="logo.svg"
               className="mr-3 h-6 sm:h-9"
-              alt="Flowbite Logo"
+              alt="Daily24 Logo"
             />
             <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
               Daily24
