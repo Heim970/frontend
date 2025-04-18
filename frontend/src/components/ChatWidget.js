@@ -1,5 +1,3 @@
-"use client";
-
 import { useState, useEffect, useRef } from "react";
 import { MessageCircle, X, Send, Loader2 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
@@ -96,13 +94,16 @@ export default function ChatWidget() {
     setIsLoading(true);
 
     try {
-      const res = await fetch("http://localhost:8000/chat/full", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ question }),
-      });
+      const res = await fetch(
+        "http://fastapp-env.eba-jqjsrhti.ap-northeast-1.elasticbeanstalk.com/chat/full",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ question }),
+        }
+      );
 
       if (!res.ok) {
         throw new Error("서버 응답이 정상적이지 않습니다.");
