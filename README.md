@@ -14,14 +14,8 @@ cd backend
 
 ### 2. 가상환경 생성 및 활성화
 #### ▶️ 가상환경 생성
-- 맥
 ```bash
 python3 -m venv .venv  
-```
-
-- 윈도우
-```bash
-python -m venv .venv
 ```
 
 #### ✅ 가상환경 활성화
